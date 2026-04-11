@@ -1,4 +1,4 @@
-import { techStack } from "@/data/portfolio";
+import { techStack } from "@/data/site-content";
 
 export function TechStack() {
   return (
@@ -21,11 +21,8 @@ export function TechStack() {
             >
               {item.icon}
             </span>
-            <span
-              className="block text-[7px]"
-              style={{ color: item.dotColor }}
-            >
-              ●
+            <span className="block text-[7px]" style={{ color: item.dotColor }}>
+              {"\u25cf"}
             </span>
             <div className="text-[10px] font-medium text-slate-500">
               {item.name}

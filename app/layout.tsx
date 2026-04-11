@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${dmMono.variable} bg-slate-950 px-4 py-6 font-[var(--font-dm-sans)] text-slate-200 sm:px-6 lg:px-8`}
+        className={`${dmSans.variable} ${dmMono.variable} bg-slate-950 py-6 font-[var(--font-dm-sans)] text-slate-200`}
       >
         {children}
       </body>

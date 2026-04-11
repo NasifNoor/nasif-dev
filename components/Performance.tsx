@@ -1,4 +1,4 @@
-import { performanceHighlights } from "@/data/portfolio";
+import { performanceHighlights } from "@/data/site-content";
 
 export function Performance() {
   return (

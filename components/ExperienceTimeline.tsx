@@ -1,4 +1,4 @@
-import { experience } from "@/data/portfolio";
+import { experience } from "@/data/site-content";
 
 export function ExperienceTimeline() {
   return (
