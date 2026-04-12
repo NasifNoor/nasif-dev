@@ -29,9 +29,14 @@ export function Hero() {
         </p>
 
         <div className="mb-9 flex flex-col justify-center gap-2.5 sm:flex-row">
+          <a href="/M_Nasif_Hasan_Noor_Resume.pdf"  download
+            className="rounded-[8px] bg-blue-500 px-6 py-2.5 text-[13px] font-medium text-white"
+          >
+             Download CV
+          </a>
           <ScrollLink
             href="#projects"
-            className="rounded-[8px] bg-blue-500 px-6 py-2.5 text-[13px] font-medium text-white"
+            className="rounded-[8px] border border-white/10 px-6 py-2.5 text-[13px] text-slate-400"
           >
             View Projects
           </ScrollLink>

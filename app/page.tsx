@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { BackToTop } from "@/components/BackToTop";
 import { Contact } from "@/components/Contact";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Footer } from "@/components/Footer";
@@ -30,6 +31,7 @@ export default function Home() {
           <Footer />
         </div>
       </div>
+      <BackToTop />
     </main>
   );
 }

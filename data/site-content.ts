@@ -51,7 +51,7 @@ export const navItems: NavItem[] = [
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/NasifNoor" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/nasifh" },
-  { label: "nasifhasannoor@gmail.com", href: "mailto:nasifhasannoor@gmail.com" },
+  { label: "nasif.workstation@gmail.com", href: "mailto:nasif.workstation@gmail.com" },
 ];
 
 export const techStack: TechItem[] = [
@@ -80,33 +80,18 @@ export const techStack: TechItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    slug: "mhs-medical-health-system",
-    highlight: "RBAC + EHR",
-    title: "MHS - Medical Health System",
+    slug: "mhs-memorial-houston-medical",
+    highlight: "Healthcare",
+    title: "MHS - Memorial Houston Medical",
     description:
-      "Enterprise healthcare platform with Electronic Health Records, multi-role access control, and OTP-based auth.",
-    tags: ["Next.js", "TypeScript", "Redux", "PostgreSQL"],
+      "An enterprise-grade healthcare management platform built on microservices architecture.",
+    tags: ["Next.js", "FastAPI", "Spring Boot", "PostgreSQL", "Material UI", "Tailwind CSS"],
     overview:
-      "A frontend-heavy enterprise healthcare platform focused on secure records management and role-aware workflows.",
+      "Played a primary development role in the platform's most critical modules including Auth, Electronic Health Records (EHR), Patient Information System (PIS), and User Information System (UIS), ensuring secure role-based access and efficient management of users, patient records, and hospital operations.",
     details: [
-      "Built patient and practitioner workflows for Electronic Health Records with clear, responsive UI states.",
-      "Implemented multi-role access experiences around RBAC, OTP authentication, and secure session handling.",
-      "Organized complex product flows into reusable frontend architecture that supported long-term scaling.",
-    ],
-  },
-  {
-    slug: "bscl-billing-system",
-    highlight: "Finance",
-    title: "BSCL Billing System",
-    description:
-      "End-to-end billing platform with complex tariffs, automated invoicing, and financial dashboards.",
-    tags: ["React", "TypeScript", "Tailwind", "Chart.js"],
-    overview:
-      "A financial operations interface designed to handle complex tariff logic, invoice generation, and reporting views.",
-    details: [
-      "Delivered dashboard and billing surfaces for high-volume finance workflows with strong information density.",
-      "Translated tariff rules and invoicing complexity into maintainable frontend patterns and components.",
-      "Created visual reporting experiences that made billing and financial data easier to audit and navigate.",
+      "Built and maintained key healthcare workflows across Auth, EHR, PIS, and UIS modules.",
+      "Supported secure role-based access and efficient management of users, records, and hospital operations.",
+      "Worked within a microservices-based platform while delivering clean, scalable frontend implementation.",
     ],
   },
   {
@@ -114,14 +99,59 @@ export const projects: ProjectItem[] = [
     highlight: "E-Commerce",
     title: "ECOMILLI",
     description:
-      "High-performance e-commerce platform optimized for Core Web Vitals and conversion UX.",
-    tags: ["Next.js", "Redux Toolkit", "Stripe"],
+      "A multi-module web platform centered on eco-friendly, sustainable, and affordable living.",
+    tags: ["React", "Next.js", "Spring Boot", "WordPress (Headless CMS)", "MySQL", "Bootstrap", "Material UI"],
     overview:
-      "A conversion-focused e-commerce frontend built around performance, clarity, and fast shopper flows.",
+      "The system integrates a multivendor e-commerce store, a community interaction hub, a podcast platform, and a resource-sharing module into a single ecosystem.",
     details: [
-      "Optimized storefront interactions around Core Web Vitals, faster rendering, and lightweight client behavior.",
-      "Built product and checkout flows with a focus on conversion UX and dependable state management.",
-      "Integrated modern e-commerce tooling to support payments, scalable catalog behavior, and polished user journeys.",
+      "Designed to connect eco-conscious users and vendors through a seamless, high-performance interface.",
+      "Promoted environmental awareness with a cohesive multi-module product experience.",
+      "Contributed to a modern frontend spanning storefront, community, content, and sharing experiences.",
+    ],
+  },
+  {
+    slug: "bscl-billing-system",
+    highlight: "Billing",
+    title: "BSCL Billing System",
+    description:
+      "A national-scale billing and revenue management system for Bangladesh Satellite Company Limited (BSCL).",
+    tags: ["Angular", "Spring Boot", "Bootstrap", "MySQL", "Angular Material", "JasperReports"],
+    overview:
+      "Managed financial operations for all national TV channels and broadcasters, with a primary frontend development role for core modules including automated invoicing and financial analytics dashboards.",
+    details: [
+      "Built frontend experiences for automated invoicing and financial analytics dashboards.",
+      "Supported a national-scale billing and revenue management system used across broadcaster operations.",
+      "Focused on maintainable, high-clarity interfaces for operational finance workflows.",
+    ],
+  },
+  {
+    slug: "curation-keying-audit-portal-family-search",
+    highlight: "Audit Portal",
+    title: "Curation Keying Audit Portal - Family Search",
+    description:
+      "An audit and monitoring portal developed for FamilySearch International, the world's largest genealogy organization.",
+    tags: ["Angular", "Spring Boot", "FastAPI", "PostgreSQL", "Bootstrap", "JasperReports"],
+    overview:
+      "The system was engineered to handle millions of genealogical records, track data changes with precision, and generate detailed compliance reports to ensure data accuracy and transparency at scale.",
+    details: [
+      "Supported audit and monitoring workflows for an organization managing over 8 billion historical records across 140 countries.",
+      "Built interfaces for large-scale record tracking, precision change monitoring, and compliance reporting.",
+      "Focused on clarity and reliability for high-volume data review experiences.",
+    ],
+  },
+  {
+    slug: "nippon-middleware",
+    highlight: "Middleware",
+    title: "Nippon Middleware",
+    description:
+      "Web-based middleware application developed for NIPPON Express Bangladesh to manage shipment bookings.",
+    tags: ["Angular", "Spring Boot", "MySQL", "Bootstrap", "Angular Material"],
+    overview:
+      "Built to facilitate seamless communication with Inditex systems while supporting shipment booking workflows.",
+    details: [
+      "Developed booking-focused interfaces for logistics and middleware operations.",
+      "Supported seamless communication between internal workflows and Inditex-connected systems.",
+      "Contributed to stable operational tooling for shipment management use cases.",
     ],
   },
 ];
@@ -186,8 +216,8 @@ export const performanceHighlights: PerformanceItem[] = [
 ];
 
 export const contactLinks: SocialLink[] = [
-  { label: "nasifhasannoor@gmail.com", href: "mailto:nasifhasannoor@gmail.com" },
-  { label: "LinkedIn /nasifhasannoor", href: "https://linkedin.com/in/nasifhasannoor" },
+  { label: "nasif.workstation@gmail.com", href: "mailto:nasif.workstation@gmail.com" },
+  { label: "LinkedIn /nasifh", href: "https://www.linkedin.com/in/nasifh" },
 ];
 
 export function getProjectBySlug(slug: string) {

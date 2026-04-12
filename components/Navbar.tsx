@@ -31,7 +31,7 @@ export function Navbar() {
           href="#top"
           className="font-[var(--font-dm-mono)] text-[14px] text-slate-200"
         >
-          nasif<span className="text-blue-500">.</span>dev
+          nasif<span className="text-blue-500">.</span>
         </ScrollLink>
 
         <div className="hidden items-center gap-6 sm:flex">
