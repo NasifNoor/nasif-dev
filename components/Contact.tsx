@@ -1,4 +1,4 @@
-import { contactLinks } from "@/data/portfolio";
+import { contactLinks } from "@/data/site-content";
 
 export function Contact() {
   return (

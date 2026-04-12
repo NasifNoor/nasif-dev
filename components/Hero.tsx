@@ -1,4 +1,5 @@
-import { socialLinks } from "@/data/portfolio";
+import { ScrollLink } from "@/components/ScrollLink";
+import { socialLinks } from "@/data/site-content";
 
 export function Hero() {
   return (
@@ -28,18 +29,23 @@ export function Hero() {
         </p>
 
         <div className="mb-9 flex flex-col justify-center gap-2.5 sm:flex-row">
-          <a
-            href="#projects"
+          <a href="/M_Nasif_Hasan_Noor_Resume.pdf"  download
             className="rounded-[8px] bg-blue-500 px-6 py-2.5 text-[13px] font-medium text-white"
           >
-            View Projects
+             Download CV
           </a>
-          <a
+          <ScrollLink
+            href="#projects"
+            className="rounded-[8px] border border-white/10 px-6 py-2.5 text-[13px] text-slate-400"
+          >
+            View Projects
+          </ScrollLink>
+          <ScrollLink
             href="#contact"
             className="rounded-[8px] border border-white/10 px-6 py-2.5 text-[13px] text-slate-400"
           >
             Contact Me
-          </a>
+          </ScrollLink>
         </div>
 
         <div className="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:gap-5">
