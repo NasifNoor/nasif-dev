@@ -185,7 +185,7 @@ export const experience: ExperienceItem[] = [
       "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
   },
   {
-    period: "2022",
+    period: "2021",
     role: "Frontend Intern",
     description:
       "Delivered UI features with React and TypeScript under mentorship and code review.",

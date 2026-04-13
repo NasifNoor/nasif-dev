@@ -1,5 +1,6 @@
 node_modules
-nasif_portfolio_v2_clean.html
 package-lock.json
 .next
 dist
+.env.local
+tsconfig.tsbuildinfo
