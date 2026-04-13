@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { BackToTop } from "@/components/BackToTop";
 import { Contact } from "@/components/Contact";
+import { Education } from "@/components/Education";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -22,6 +23,8 @@ export default function Home() {
           <Projects />
           <div className="section-divider" />
           <ExperienceTimeline />
+          <div className="section-divider" />
+          <Education />
           <div className="section-divider" />
           <Performance />
           <div className="section-divider" />

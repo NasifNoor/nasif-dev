@@ -33,6 +33,13 @@ export type ExperienceItem = {
   current?: boolean;
 };
 
+export type EducationItem = {
+  duration: string;
+  degree: string;
+  institution: string;
+  result?: string;
+};
+
 export type PerformanceItem = {
   icon: string;
   metric: string;
@@ -44,6 +51,7 @@ export const navItems: NavItem[] = [
   { label: "Stack", href: "#stack" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -181,6 +189,33 @@ export const experience: ExperienceItem[] = [
     role: "Frontend Intern",
     description:
       "Delivered UI features with React and TypeScript under mentorship and code review.",
+  },
+];
+
+export const education: EducationItem[] = [
+  {
+    duration: "2023",
+    degree: "M.Sc. in CSE, PMSCS",
+    institution: "Jahangirnagar University (JU)",
+    result: "CGPA 3.23 out of 4.00",
+  },
+  {
+    duration: "2021",
+    degree: "B.Sc. in CSE",
+    institution: "American International University-Bangladesh (AIUB)",
+    result: "CGPA 3.74 out of 4.00",
+  },
+  {
+    duration: "2014",
+    degree: "HSC",
+    institution: "Bakshiganj Govt. Kiamat Ullah College",
+    result: "CGPA 5.00 out of 5.00",
+  },
+  {
+    duration: "2012",
+    degree: "SSC",
+    institution: "N M High School",
+    result: "CGPA 4.44 out of 5.00",
   },
 ];
 
