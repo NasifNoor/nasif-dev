@@ -45,3 +45,18 @@ textarea {
   margin: 0;
   background: rgba(255, 255, 255, 0.04);
 }
+
+@keyframes project-card-glow {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.group:hover .project-card-glow {
+  animation: project-card-glow 1.8s ease-in-out infinite;
+  opacity: 0.75;
+}
