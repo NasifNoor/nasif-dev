@@ -15,8 +15,8 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "M. Nasif Hasan Noor",
-  description: "Frontend developer portfolio",
+  title: "Nasif | Frontend Developer",
+  description: "React & Next.js developer portfolio",
   icons: {
     icon: "/site_icon_nh.png",
   },
