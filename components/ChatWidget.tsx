@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ChatNudge } from "@/components/ChatNudge";
 
 type ChatMessage = {
   role: "user" | "ai";
@@ -204,28 +205,32 @@ export function ChatWidget() {
         </div>
       </div>
 
-      <button
-        type="button"
-        aria-label={isOpen ? "Close chat" : "Open chat"}
-        aria-expanded={isOpen}
-        onClick={handleToggle}
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-cyan-500 text-white shadow-[0_18px_45px_rgba(37,99,235,0.35)] transition-all duration-200 hover:scale-105 hover:shadow-[0_22px_55px_rgba(34,211,238,0.32)]"
-      >
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          className={`h-6 w-6 transition-transform duration-200 ${
-            isOpen ? "scale-90" : "scale-100"
-          }`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      <div className="relative flex w-full justify-end">
+        <ChatNudge isChatOpen={isOpen} />
+
+        <button
+          type="button"
+          aria-label={isOpen ? "Close chat" : "Open chat"}
+          aria-expanded={isOpen}
+          onClick={handleToggle}
+          className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-cyan-500 text-white shadow-[0_18px_45px_rgba(37,99,235,0.35)] transition-all duration-200 hover:scale-105 hover:shadow-[0_22px_55px_rgba(34,211,238,0.32)]"
         >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        </svg>
-      </button>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className={`h-6 w-6 transition-transform duration-200 ${
+              isOpen ? "scale-90" : "scale-100"
+            }`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
