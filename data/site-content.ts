@@ -59,7 +59,10 @@ export const navItems: NavItem[] = [
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/NasifNoor" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/nasifh" },
-  { label: "nasif.workstation@gmail.com", href: "mailto:nasif.workstation@gmail.com" },
+  {
+    label: "nasif.workstation@gmail.com",
+    href: "mailto:nasif.workstation@gmail.com",
+  },
 ];
 
 export const techStack: TechItem[] = [
@@ -93,7 +96,14 @@ export const projects: ProjectItem[] = [
     title: "MHS - Memorial Houston Medical",
     description:
       "An enterprise-grade healthcare management platform built on microservices architecture.",
-    tags: ["Next.js", "FastAPI", "Spring Boot", "PostgreSQL", "Material UI", "Tailwind CSS"],
+    tags: [
+      "Next.js",
+      "FastAPI",
+      "Spring Boot",
+      "PostgreSQL",
+      "Material UI",
+      "Tailwind CSS",
+    ],
     overview:
       "Played a primary development role in the platform's most critical modules including Auth, Electronic Health Records (EHR), Patient Information System (PIS), and User Information System (UIS), ensuring secure role-based access and efficient management of users, patient records, and hospital operations.",
     details: [
@@ -108,7 +118,15 @@ export const projects: ProjectItem[] = [
     title: "ECOMILLI",
     description:
       "A multi-module web platform centered on eco-friendly, sustainable, and affordable living.",
-    tags: ["React", "Next.js", "Spring Boot", "WordPress (Headless CMS)", "MySQL", "Bootstrap", "Material UI"],
+    tags: [
+      "React",
+      "Next.js",
+      "Spring Boot",
+      "WordPress (Headless CMS)",
+      "MySQL",
+      "Bootstrap",
+      "Material UI",
+    ],
     overview:
       "The system integrates a multivendor e-commerce store, a community interaction hub, a podcast platform, and a resource-sharing module into a single ecosystem.",
     details: [
@@ -123,7 +141,14 @@ export const projects: ProjectItem[] = [
     title: "BSCL Billing System",
     description:
       "A national-scale billing and revenue management system for Bangladesh Satellite Company Limited (BSCL).",
-    tags: ["Angular", "Spring Boot", "Bootstrap", "MySQL", "Angular Material", "JasperReports"],
+    tags: [
+      "Angular",
+      "Spring Boot",
+      "Bootstrap",
+      "MySQL",
+      "Angular Material",
+      "JasperReports",
+    ],
     overview:
       "Managed financial operations for all national TV channels and broadcasters, with a primary frontend development role for core modules including automated invoicing and financial analytics dashboards.",
     details: [
@@ -138,7 +163,14 @@ export const projects: ProjectItem[] = [
     title: "Curation Keying Audit Portal - Family Search",
     description:
       "An audit and monitoring portal developed for FamilySearch International, the world's largest genealogy organization.",
-    tags: ["Angular", "Spring Boot", "FastAPI", "PostgreSQL", "Bootstrap", "JasperReports"],
+    tags: [
+      "Angular",
+      "Spring Boot",
+      "FastAPI",
+      "PostgreSQL",
+      "Bootstrap",
+      "JasperReports",
+    ],
     overview:
       "The system was engineered to handle millions of genealogical records, track data changes with precision, and generate detailed compliance reports to ensure data accuracy and transparency at scale.",
     details: [
@@ -160,6 +192,23 @@ export const projects: ProjectItem[] = [
       "Developed booking-focused interfaces for logistics and middleware operations.",
       "Supported seamless communication between internal workflows and Inditex-connected systems.",
       "Contributed to stable operational tooling for shipment management use cases.",
+    ],
+  },
+  {
+    slug: "kitchen-bask",
+    highlight: "E-Commerce",
+    title: "Kitchen Bask - eCommerce & Brand Portfolio Platform",
+    description:
+      "Kitchen Bask is a mobile-responsive eCommerce platform built with WordPress and WooCommerce, delivering a seamless online shopping experience.",
+    tags: ["WordPress", "WooCommerce", "Custom CSS"],
+    overview:
+      "Kitchen Bask serves as both an online store and a brand portfolio, allowing users to explore products and brand identity through a clean and mobile-responsive interface.",
+    details: [
+      "Built with a mobile-responsive design that keeps the shopping experience consistent across devices.",
+      "Implemented a product catalog and cart system to support product discovery and purchasing.",
+      "Supported checkout and order flow for a smooth end-to-end eCommerce journey.",
+      "Integrated brand portfolio content alongside storefront experiences in a unified interface.",
+      "Focused on an optimized user experience with clean, accessible, and user-friendly interactions.",
     ],
   },
 ];
@@ -251,7 +300,10 @@ export const performanceHighlights: PerformanceItem[] = [
 ];
 
 export const contactLinks: SocialLink[] = [
-  { label: "nasif.workstation@gmail.com", href: "mailto:nasif.workstation@gmail.com" },
+  {
+    label: "nasif.workstation@gmail.com",
+    href: "mailto:nasif.workstation@gmail.com",
+  },
   { label: "LinkedIn /nasifh", href: "https://www.linkedin.com/in/nasifh" },
 ];
 

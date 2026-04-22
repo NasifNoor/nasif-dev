@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
+import { ChatWidget } from "@/components/ChatWidget";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${dmMono.variable} bg-slate-950 py-6 font-[var(--font-dm-sans)] text-slate-200`}
       >
         {children}
+        <ChatWidget />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Navbar } from "@/components/Navbar";
 import { getProjectBySlug, projects } from "@/data/site-content";
 
 type ProjectDetailPageProps = {
@@ -26,12 +27,33 @@ export default async function ProjectDetailPage({
     <main className="w-full">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="portfolio-shell">
+          <Navbar />
           <section className="px-5 pb-16 pt-12 sm:px-10">
             <Link
-              href="/"
+              href="/#projects"
               className="mb-8 inline-flex font-[var(--font-dm-mono)] text-[11px] uppercase tracking-[2px] text-slate-500 transition-colors duration-150 hover:text-slate-400"
             >
-              Back to portfolio
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 rotate-270 mt-[-3px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 10h10a4 4 0 1 1 0 8h-1"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 10l4-4m-4 4l4 4"
+                />
+              </svg>
+              Back to Projects
             </Link>
 
             <div className="mb-2 font-[var(--font-dm-mono)] text-[10px] uppercase tracking-[3px] text-blue-500">
