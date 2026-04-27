@@ -5,6 +5,7 @@ type ScrollLinkProps = {
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
+  focusTargetId?: string;
 };
 
 export function ScrollLink({
@@ -12,7 +13,21 @@ export function ScrollLink({
   className,
   children,
   onClick,
+  focusTargetId,
 }: ScrollLinkProps) {
+  const focusTarget = () => {
+    if (!focusTargetId) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      const target = document.getElementById(focusTargetId);
+      if (target instanceof HTMLElement) {
+        target.focus({ preventScroll: true });
+      }
+    }, 450);
+  };
+
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (!href.startsWith("#")) {
       onClick?.();
@@ -23,14 +38,20 @@ export function ScrollLink({
     if (element instanceof HTMLElement) {
       event.preventDefault();
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.replaceState(null, "", href);
+      const nextUrl = focusTargetId
+        ? `/?focus=${encodeURIComponent(focusTargetId)}${href}`
+        : href;
+      window.history.replaceState(null, "", nextUrl);
+      focusTarget();
       onClick?.();
       return;
     }
 
     if (window.location.pathname !== "/") {
       event.preventDefault();
-      window.location.href = `/${href}`;
+      window.location.href = focusTargetId
+        ? `/?focus=${encodeURIComponent(focusTargetId)}${href}`
+        : `/${href}`;
       onClick?.();
       return;
     }

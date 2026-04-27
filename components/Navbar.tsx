@@ -59,6 +59,7 @@ export function Navbar() {
           ))}
           <ScrollLink
             href="#contact"
+            focusTargetId="contact-name"
             className="rounded-[6px] bg-blue-500 px-4 py-1.5 text-[12px] font-medium text-white"
           >
             Hire Me
@@ -118,6 +119,7 @@ export function Navbar() {
             ))}
             <ScrollLink
               href="#contact"
+              focusTargetId="contact-name"
               onClick={() => setIsMenuOpen(false)}
               className="mt-1 inline-flex w-fit rounded-[6px] bg-blue-500 px-4 py-2 text-[12px] font-medium text-white"
             >
