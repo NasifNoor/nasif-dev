@@ -120,19 +120,23 @@ export function ChatNudge({ isChatOpen }: ChatNudgeProps) {
     scheduleHide(remainingHideTimeRef.current);
   };
 
+  const isTooltipVisible = showTooltip && !hasOpenedChat;
+
   return (
     <div
       className={`pointer-events-none absolute bottom-full right-0 mb-3 w-full max-w-[220px] transition-all duration-300 ease-out ${
-        showTooltip && !hasOpenedChat
+        isTooltipVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-2 opacity-0"
       }`}
-      aria-hidden={!showTooltip || hasOpenedChat}
+      aria-hidden={!isTooltipVisible}
     >
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative pointer-events-auto rounded-2xl border border-slate-200/70 bg-white/95 px-4 py-3 text-sm leading-5 text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.14)] backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/95 dark:text-slate-200"
+        className={`relative rounded-2xl border border-slate-200/70 bg-white/95 px-4 py-3 text-sm leading-5 text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.14)] backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/95 dark:text-slate-200 ${
+          isTooltipVisible ? "pointer-events-auto" : "pointer-events-none"
+        }`}
       >
         Hi {"\u{1F44B}"} Curious about my work?
         <span className="absolute bottom-[-6px] right-5 h-3 w-3 rotate-45 rounded-[3px] border-b border-r border-slate-200/70 bg-white/95 dark:border-white/10 dark:bg-slate-900/95" />
