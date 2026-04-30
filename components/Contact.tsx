@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useCallback, useMemo, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Script from "next/script";
 import { contactLinks } from "@/data/site-content";
 
@@ -98,6 +98,7 @@ export function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement | null>(null);
 
   const hasRecaptcha = useMemo(() => Boolean(RECAPTCHA_SITE_KEY), []);
 
@@ -188,6 +189,24 @@ export function Contact() {
     [formValues],
   );
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("focus") !== "contact-name") {
+      return;
+    }
+
+    const focusInput = () => {
+      nameInputRef.current?.focus({ preventScroll: true });
+      params.delete("focus");
+      const nextSearch = params.toString();
+      const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ""}${window.location.hash}`;
+      window.history.replaceState(null, "", nextUrl);
+    };
+
+    const timer = window.setTimeout(focusInput, 450);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <section id="contact" className="px-5 py-16 sm:px-10">
       {hasRecaptcha ? (
@@ -234,6 +253,8 @@ export function Contact() {
           <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
             <div>
               <input
+                id="contact-name"
+                ref={nameInputRef}
                 type="text"
                 name="name"
                 placeholder="Name"

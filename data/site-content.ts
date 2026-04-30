@@ -215,26 +215,26 @@ export const projects: ProjectItem[] = [
 
 export const experience: ExperienceItem[] = [
   {
-    period: "2024 - Present",
+    period: "April 2024 - March 2026",
     role: "Software Engineer",
     description:
       "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
-    current: true,
+    current: false,
   },
   {
-    period: "2023 - 2024",
+    period: "April 2023 - March 2024",
     role: "Assistant Software Engineer",
     description:
       "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
   },
   {
-    period: "2022 - 2023",
+    period: "February 2022 - March 2023",
     role: "Junior Software Engineer",
     description:
       "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
   },
   {
-    period: "2021",
+    period: "October 2021 - January 2022",
     role: "Frontend Intern",
     description:
       "Delivered UI features with React and TypeScript under mentorship and code review.",
