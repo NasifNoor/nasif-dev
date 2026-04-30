@@ -62,6 +62,8 @@ export const cv = {
     mobile: "+8801626858697",
   },
   about: {
+    importantNote:
+      "I am actively seeking new opportunities to contribute my frontend development skills and grow professionally. If you have a role that aligns with my experience and expertise, please feel free to reach out to me.",
     summary:
       "4+ years of experience crafting high-performance, scalable web applications with React, Next.js, TypeScript, and Angular. Specialist in developing reusable component architectures, optimizing performance, and integrating RESTful APIs. Focused on writing clean, maintainable code and delivering reliable solutions in agile environments, with a strong interest in continuously adopting modern web technologies.",
   },
@@ -70,7 +72,7 @@ export const cv = {
     positions: [
       {
         title: "Software Engineer",
-        duration: "April 2024 - Present",
+        duration: "April 2024 - March 2026",
       },
       {
         title: "Assistant Software Engineer",
