@@ -180,6 +180,28 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
+    slug: "datakeying",
+    highlight: "Enterprise",
+    title: "DataKeying",
+    description:
+      "A high-performance data entry and verification platform for massive government and institutional record processing.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "Material UI",
+      "Canvas/Image Processing",
+      "REST API Integration",
+    ],
+    overview:
+      "Built for high-volume document digitization workflows, DataKeying synchronizes tagged image regions with form fields to speed entry, reduce errors, and support rigorous operator verification at scale.",
+    details: [
+      "Implemented intelligent image tagging with field-to-image focus synchronization for faster, more accurate data entry.",
+      "Designed keyboard-driven workflows and focus management to support rapid operator performance across massive document queues.",
+      "Delivered a verification system optimized for high-volume government and institutional record processing.",
+    ],
+  },
+  {
     slug: "nippon-middleware",
     highlight: "Middleware",
     title: "Nippon Middleware",

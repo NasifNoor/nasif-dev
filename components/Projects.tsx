@@ -18,6 +18,9 @@ const tagColors: Record<string, string> = {
   Angular: "#DD0031",
   "Angular Material": "#3F51B5",
   JasperReports: "#D32F2F",
+  "Redux Toolkit": "#764ABC",
+  "Canvas/Image Processing": "#F97316",
+  "REST API Integration": "#10B981",
 };
 
 function getTagStyle(tag: string) {
