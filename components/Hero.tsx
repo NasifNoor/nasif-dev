@@ -98,7 +98,7 @@ export function Hero() {
         </h1>
 
         <p className="mb-4 font-[var(--font-dm-mono)] text-[13px] uppercase tracking-[2.5px] text-blue-500">
-          Frontend Developer
+          Frontend Engineer
         </p>
 
         <p className="mx-auto mb-8 max-w-[380px] text-[15px] leading-[1.75] text-slate-500">
