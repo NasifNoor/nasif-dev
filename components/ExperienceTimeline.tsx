@@ -37,6 +37,10 @@ export function ExperienceTimeline() {
               ) : null}
             </div>
 
+            <div className="mb-1 text-[12px] font-medium text-slate-500">
+              {item.company}
+            </div>
+
             <p className="text-[12px] leading-[1.65] text-slate-600">
               {item.description}
             </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { BackToTop } from "@/components/BackToTop";
 import { ChatNudge } from "@/components/ChatNudge";
 
 type ChatMessage = {
@@ -97,7 +98,7 @@ export function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-[1100] flex flex-col items-end gap-3">
+    <div className="pointer-events-none fixed bottom-5 right-5 z-[1100] flex flex-col items-end gap-3">
       <div
         className={`w-[calc(100vw-1.5rem)] max-w-[20rem] origin-bottom-right overflow-hidden rounded-[14px] border border-white/10 bg-slate-950/95 shadow-[0_24px_80px_rgba(2,8,23,0.45)] backdrop-blur-xl transition-all duration-300 ease-out ${
           isOpen
@@ -213,7 +214,7 @@ export function ChatWidget() {
           aria-label={isOpen ? "Close chat" : "Open chat"}
           aria-expanded={isOpen}
           onClick={handleToggle}
-          className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-cyan-500 text-white shadow-[0_18px_45px_rgba(37,99,235,0.35)] transition-all duration-200 hover:scale-105 hover:shadow-[0_22px_55px_rgba(34,211,238,0.32)]"
+          className="group pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-cyan-500 text-white shadow-[0_18px_45px_rgba(37,99,235,0.35)] transition-all duration-200 hover:scale-105 hover:shadow-[0_22px_55px_rgba(34,211,238,0.32)]"
         >
           <svg
             aria-hidden="true"
@@ -231,6 +232,8 @@ export function ChatWidget() {
           </svg>
         </button>
       </div>
+
+      <BackToTop />
     </div>
   );
 }

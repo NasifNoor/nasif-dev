@@ -4,6 +4,7 @@ import { projects } from "@/data/site-content";
 const tagColors: Record<string, string> = {
   React: "#61DAFB",
   "Next.js": "#E5E7EB",
+  NestJS: "#E0234E",
   FastAPI: "#009688",
   "Spring Boot": "#6DB33F",
   PostgreSQL: "#336791",

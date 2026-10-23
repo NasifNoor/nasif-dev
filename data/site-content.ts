@@ -29,6 +29,7 @@ export type ProjectItem = {
 export type ExperienceItem = {
   period: string;
   role: string;
+  company: string;
   description: string;
   current?: boolean;
 };
@@ -87,9 +88,36 @@ export const techStack: TechItem[] = [
     iconClassName: "text-[#DD0031]",
     dotColor: "#DD0031",
   },
+  {
+    name: "NestJS",
+    icon: "N",
+    iconClassName: "text-[15px] font-bold text-[#E0234E]",
+    dotColor: "#E0234E",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "PG",
+    iconClassName: "text-[11px] font-bold text-[#336791]",
+    dotColor: "#336791",
+  },
 ];
 
 export const projects: ProjectItem[] = [
+  {
+    slug: "inhouse-erp-system",
+    highlight: "ERP",
+    title: "In-House ERP System - Lecture Publications",
+    description:
+      "An in-house ERP system for Lecture Publications Ltd. to manage core business operations.",
+    tags: ["React", "NestJS", "PostgreSQL"],
+    overview:
+      "Building and maintaining a full-stack ERP system from the ground up, covering the React frontend, NestJS API layer, and PostgreSQL data layer that drive the company's internal business workflows.",
+    details: [
+      "Developing React interfaces for internal ERP modules and business workflows.",
+      "Building RESTful APIs with NestJS to power core ERP functionality.",
+      "Designing and maintaining PostgreSQL schemas for ERP data management.",
+    ],
+  },
   {
     slug: "mhs-memorial-houston-medical",
     highlight: "Healthcare",
@@ -237,8 +265,17 @@ export const projects: ProjectItem[] = [
 
 export const experience: ExperienceItem[] = [
   {
+    period: "September 2026 - Present",
+    role: "Software Engineer",
+    company: "Lecture Publications Ltd.",
+    description:
+      "Building and maintaining an in-house ERP system using React, NestJS, and PostgreSQL.",
+    current: true,
+  },
+  {
     period: "April 2024 - March 2026",
     role: "Software Engineer",
+    company: "Golden Harvest InfoTech Ltd.",
     description:
       "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
     current: false,
@@ -246,18 +283,21 @@ export const experience: ExperienceItem[] = [
   {
     period: "April 2023 - March 2024",
     role: "Assistant Software Engineer",
+    company: "Golden Harvest InfoTech Ltd.",
     description:
       "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
   },
   {
     period: "February 2022 - March 2023",
     role: "Junior Software Engineer",
+    company: "Golden Harvest InfoTech Ltd.",
     description:
       "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
   },
   {
     period: "October 2021 - January 2022",
     role: "Frontend Intern",
+    company: "Golden Harvest InfoTech Ltd.",
     description:
       "Delivered UI features with React and TypeScript under mentorship and code review.",
   },
