@@ -26,12 +26,16 @@ export type ProjectItem = {
   details: string[];
 };
 
-export type ExperienceItem = {
+export type ExperiencePosition = {
   period: string;
   role: string;
-  company: string;
   description: string;
   current?: boolean;
+};
+
+export type ExperienceGroup = {
+  company: string;
+  positions: ExperiencePosition[];
 };
 
 export type EducationItem = {
@@ -263,43 +267,47 @@ export const projects: ProjectItem[] = [
   },
 ];
 
-export const experience: ExperienceItem[] = [
+export const experience: ExperienceGroup[] = [
   {
-    period: "September 2026 - Present",
-    role: "Software Engineer",
     company: "Lecture Publications Ltd.",
-    description:
-      "Building and maintaining an in-house ERP system using React, NestJS, and PostgreSQL.",
-    current: true,
+    positions: [
+      {
+        period: "September 2026 - Present",
+        role: "Software Engineer",
+        description:
+          "Building and maintaining an in-house ERP system using React, NestJS, and PostgreSQL.",
+        current: true,
+      },
+    ],
   },
   {
-    period: "April 2024 - March 2026",
-    role: "Software Engineer",
     company: "Golden Harvest InfoTech Ltd.",
-    description:
-      "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
-    current: false,
-  },
-  {
-    period: "April 2023 - March 2024",
-    role: "Assistant Software Engineer",
-    company: "Golden Harvest InfoTech Ltd.",
-    description:
-      "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
-  },
-  {
-    period: "February 2022 - March 2023",
-    role: "Junior Software Engineer",
-    company: "Golden Harvest InfoTech Ltd.",
-    description:
-      "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
-  },
-  {
-    period: "October 2021 - January 2022",
-    role: "Frontend Intern",
-    company: "Golden Harvest InfoTech Ltd.",
-    description:
-      "Delivered UI features with React and TypeScript under mentorship and code review.",
+    positions: [
+      {
+        period: "April 2024 - March 2026",
+        role: "Software Engineer",
+        description:
+          "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
+      },
+      {
+        period: "April 2023 - March 2024",
+        role: "Assistant Software Engineer",
+        description:
+          "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
+      },
+      {
+        period: "February 2022 - March 2023",
+        role: "Junior Software Engineer",
+        description:
+          "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
+      },
+      {
+        period: "October 2021 - January 2022",
+        role: "Frontend Intern",
+        description:
+          "Delivered UI features with React and TypeScript under mentorship and code review.",
+      },
+    ],
   },
 ];
 
