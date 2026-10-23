@@ -4,6 +4,7 @@ import { projects } from "@/data/site-content";
 const tagColors: Record<string, string> = {
   React: "#61DAFB",
   "Next.js": "#E5E7EB",
+  NestJS: "#E0234E",
   FastAPI: "#009688",
   "Spring Boot": "#6DB33F",
   PostgreSQL: "#336791",
@@ -18,6 +19,9 @@ const tagColors: Record<string, string> = {
   Angular: "#DD0031",
   "Angular Material": "#3F51B5",
   JasperReports: "#D32F2F",
+  "Redux Toolkit": "#764ABC",
+  "Canvas/Image Processing": "#F97316",
+  "REST API Integration": "#10B981",
 };
 
 function getTagStyle(tag: string) {

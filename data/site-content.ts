@@ -26,11 +26,16 @@ export type ProjectItem = {
   details: string[];
 };
 
-export type ExperienceItem = {
+export type ExperiencePosition = {
   period: string;
   role: string;
   description: string;
   current?: boolean;
+};
+
+export type ExperienceGroup = {
+  company: string;
+  positions: ExperiencePosition[];
 };
 
 export type EducationItem = {
@@ -87,9 +92,36 @@ export const techStack: TechItem[] = [
     iconClassName: "text-[#DD0031]",
     dotColor: "#DD0031",
   },
+  {
+    name: "NestJS",
+    icon: "N",
+    iconClassName: "text-[15px] font-bold text-[#E0234E]",
+    dotColor: "#E0234E",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "PG",
+    iconClassName: "text-[11px] font-bold text-[#336791]",
+    dotColor: "#336791",
+  },
 ];
 
 export const projects: ProjectItem[] = [
+  {
+    slug: "inhouse-erp-system",
+    highlight: "ERP",
+    title: "In-House ERP System - Lecture Publications",
+    description:
+      "An in-house ERP system for Lecture Publications Ltd. to manage core business operations.",
+    tags: ["React", "NestJS", "PostgreSQL"],
+    overview:
+      "Building and maintaining a full-stack ERP system from the ground up, covering the React frontend, NestJS API layer, and PostgreSQL data layer that drive the company's internal business workflows.",
+    details: [
+      "Developing React interfaces for internal ERP modules and business workflows.",
+      "Building RESTful APIs with NestJS to power core ERP functionality.",
+      "Designing and maintaining PostgreSQL schemas for ERP data management.",
+    ],
+  },
   {
     slug: "mhs-memorial-houston-medical",
     highlight: "Healthcare",
@@ -180,6 +212,28 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
+    slug: "datakeying",
+    highlight: "Enterprise",
+    title: "DataKeying",
+    description:
+      "A high-performance data entry and verification platform for massive government and institutional record processing.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "Material UI",
+      "Canvas/Image Processing",
+      "REST API Integration",
+    ],
+    overview:
+      "Built for high-volume document digitization workflows, DataKeying synchronizes tagged image regions with form fields to speed entry, reduce errors, and support rigorous operator verification at scale.",
+    details: [
+      "Implemented intelligent image tagging with field-to-image focus synchronization for faster, more accurate data entry.",
+      "Designed keyboard-driven workflows and focus management to support rapid operator performance across massive document queues.",
+      "Delivered a verification system optimized for high-volume government and institutional record processing.",
+    ],
+  },
+  {
     slug: "nippon-middleware",
     highlight: "Middleware",
     title: "Nippon Middleware",
@@ -213,31 +267,47 @@ export const projects: ProjectItem[] = [
   },
 ];
 
-export const experience: ExperienceItem[] = [
+export const experience: ExperienceGroup[] = [
   {
-    period: "April 2024 - March 2026",
-    role: "Software Engineer",
-    description:
-      "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
-    current: false,
+    company: "Lecture Publications Ltd.",
+    positions: [
+      {
+        period: "September 2026 - Present",
+        role: "Software Engineer",
+        description:
+          "Building and maintaining an in-house ERP system using React, NestJS, and PostgreSQL.",
+        current: true,
+      },
+    ],
   },
   {
-    period: "April 2023 - March 2024",
-    role: "Assistant Software Engineer",
-    description:
-      "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
-  },
-  {
-    period: "February 2022 - March 2023",
-    role: "Junior Software Engineer",
-    description:
-      "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
-  },
-  {
-    period: "October 2021 - January 2022",
-    role: "Frontend Intern",
-    description:
-      "Delivered UI features with React and TypeScript under mentorship and code review.",
+    company: "Golden Harvest InfoTech Ltd.",
+    positions: [
+      {
+        period: "April 2024 - March 2026",
+        role: "Software Engineer",
+        description:
+          "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
+      },
+      {
+        period: "April 2023 - March 2024",
+        role: "Assistant Software Engineer",
+        description:
+          "Developed EHR and billing system features. Implemented auth flows and Redux state patterns.",
+      },
+      {
+        period: "February 2022 - March 2023",
+        role: "Junior Software Engineer",
+        description:
+          "Built reusable UI components, integrated REST APIs, contributed to responsive design systems.",
+      },
+      {
+        period: "October 2021 - January 2022",
+        role: "Frontend Intern",
+        description:
+          "Delivered UI features with React and TypeScript under mentorship and code review.",
+      },
+    ],
   },
 ];
 

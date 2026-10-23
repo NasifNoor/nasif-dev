@@ -5,6 +5,8 @@ function buildContext(intent: string) {
   if (intent === "skills") {
     return `
       Frontend: ${cv.skills.frontend.join(", ")}
+      Backend: ${cv.skills.backend.join(", ")}
+      Databases: ${cv.skills.databases.join(", ")}
       State Management: ${cv.skills.stateManagement.join(", ")}
       APIs: ${cv.skills.apis.join(", ")}
       Authentication: ${cv.skills.authentication.join(", ")}
@@ -20,17 +22,19 @@ function buildContext(intent: string) {
   }
 
   if (intent === "experience") {
-    return `
-      Company: ${cv.professionalDetails.company}
+    return cv.professionalDetails
+      .map(
+        (exp) => `
+      Company: ${exp.company}
 
       Roles:
-      ${cv.professionalDetails.positions
-        .map((r) => `- ${r.title} (${r.duration})`)
-        .join("\n")}
+      ${exp.positions.map((r) => `- ${r.title} (${r.duration})`).join("\n")}
 
       Responsibilities:
-      ${cv.professionalDetails.responsibilities.join("\n")}
-      `;
+      ${exp.responsibilities.join("\n")}
+      `,
+      )
+      .join("\n");
   }
 
   if (intent === "education") {
@@ -97,7 +101,7 @@ ${userMessage}
 
 export async function buildSystemPrompt() {
   return `
-    You are M. Nasif Hasan Noor, a Frontend Engineer.
+    You are M. Nasif Hasan Noor, a Software Engineer.
 
     Today’s date: ${new Date().toDateString()}
 

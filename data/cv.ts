@@ -24,10 +24,12 @@ export type CV = {
       current?: boolean;
     }[];
     responsibilities: string[];
-  };
+  }[];
 
   skills: {
     frontend: string[];
+    backend: string[];
+    databases: string[];
     stateManagement: string[];
     apis: string[];
     authentication: string[];
@@ -53,7 +55,7 @@ export type CV = {
 export const cv = {
   personalInfo: {
     name: "M. Nasif Hasan Noor",
-    role: "Frontend Developer",
+    role: "Software Engineer",
     address: "Mirpur, Dhaka, Bangladesh",
     email: "nasif.workstation@gmail.com",
     portfolio: "https://nasifh.vercel.app",
@@ -65,38 +67,56 @@ export const cv = {
     importantNote:
       "I am actively seeking new opportunities to contribute my frontend development skills and grow professionally. If you have a role that aligns with my experience and expertise, please feel free to reach out to me.",
     summary:
-      "4+ years of experience crafting high-performance, scalable web applications with React, Next.js, TypeScript, and Angular. Specialist in developing reusable component architectures, optimizing performance, and integrating RESTful APIs. Focused on writing clean, maintainable code and delivering reliable solutions in agile environments, with a strong interest in continuously adopting modern web technologies.",
+      "5+ years of experience crafting high-performance, scalable web applications with React, Next.js, TypeScript, and Angular, and building backend services with NestJS and PostgreSQL. Specialist in developing reusable component architectures, optimizing performance, and integrating RESTful APIs. Focused on writing clean, maintainable code and delivering reliable solutions in agile environments, with a strong interest in continuously adopting modern web technologies.",
   },
-  professionalDetails: {
-    company: "Golden Harvest InfoTech Ltd.",
-    positions: [
-      {
-        title: "Software Engineer",
-        duration: "April 2024 - March 2026",
-      },
-      {
-        title: "Assistant Software Engineer",
-        duration: "April 2023 - March 2024",
-      },
-      {
-        title: "Junior Software Engineer",
-        duration: "February 2022 - March 2023",
-      },
-      {
-        title: "Intern",
-        duration: "October 2021 - January 2022",
-      },
-    ],
-    responsibilities: [
-      "Developed web applications using React.js, Next.js, and Angular, focusing on scalability and performance.",
-      "Designed reusable, modular UI components following clean architecture principles.",
-      "Optimized application performance by improving rendering efficiency and API interactions, resulting in faster load times.",
-      "Integrated RESTful APIs and collaborated closely with backend teams to ensure seamless data flow.",
-      "Implemented responsive, user-centric interfaces based on business requirements.",
-      "Conducted code reviews (PR reviews) to maintain code quality and consistency.",
-      "Performed unit and component testing, debugging, and maintenance to ensure stable releases.",
-    ],
-  },
+  professionalDetails: [
+    {
+      company: "Lecture Publications Ltd.",
+      positions: [
+        {
+          title: "Software Engineer",
+          duration: "September 2026 - Present",
+          current: true,
+        },
+      ],
+      responsibilities: [
+        "Developing and maintaining an in-house ERP system using React, NestJS, and PostgreSQL.",
+        "Building and consuming RESTful APIs with NestJS to support core ERP modules.",
+        "Designing PostgreSQL database schemas and queries for ERP data management.",
+        "Building responsive, user-friendly interfaces with React for internal business workflows.",
+      ],
+    },
+    {
+      company: "Golden Harvest InfoTech Ltd.",
+      positions: [
+        {
+          title: "Software Engineer",
+          duration: "April 2024 - March 2026",
+        },
+        {
+          title: "Assistant Software Engineer",
+          duration: "April 2023 - March 2024",
+        },
+        {
+          title: "Junior Software Engineer",
+          duration: "February 2022 - March 2023",
+        },
+        {
+          title: "Intern",
+          duration: "October 2021 - January 2022",
+        },
+      ],
+      responsibilities: [
+        "Developed web applications using React.js, Next.js, and Angular, focusing on scalability and performance.",
+        "Designed reusable, modular UI components following clean architecture principles.",
+        "Optimized application performance by improving rendering efficiency and API interactions, resulting in faster load times.",
+        "Integrated RESTful APIs and collaborated closely with backend teams to ensure seamless data flow.",
+        "Implemented responsive, user-centric interfaces based on business requirements.",
+        "Conducted code reviews (PR reviews) to maintain code quality and consistency.",
+        "Performed unit and component testing, debugging, and maintenance to ensure stable releases.",
+      ],
+    },
+  ],
   skills: {
     frontend: [
       "React",
@@ -110,6 +130,8 @@ export const cv = {
       "Tailwind CSS",
       "Material UI",
     ],
+    backend: ["NestJS", "Spring Boot", "FastAPI"],
+    databases: ["PostgreSQL", "MySQL"],
     stateManagement: ["Redux", "Context API"],
     apis: [
       "REST APIs",
@@ -129,6 +151,12 @@ export const cv = {
     aiTools: ["Cursor", "Claude Code", "GitHub Copilot"],
   },
   projects: [
+    {
+      name: "In-House ERP System - Lecture Publications",
+      overview:
+        "A full-stack in-house ERP system for Lecture Publications Ltd., covering the React frontend, NestJS API layer, and PostgreSQL data layer that drive the company's internal business workflows.",
+      techStack: ["React", "NestJS", "PostgreSQL"],
+    },
     {
       name: "MHS - Memorial Houston Medical",
       overview:

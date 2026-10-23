@@ -16,8 +16,8 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nasif | Frontend Developer",
-  description: "React & Next.js developer portfolio",
+  title: "Nasif | Software Engineer",
+  description: "Full-stack developer portfolio - React, Next.js, NestJS",
   icons: {
     icon: "/site_icon_nh.png",
   },
