@@ -6,7 +6,7 @@ import "./globals.css";
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
 });
 
 const dmMono = DM_Mono({
@@ -18,9 +18,6 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Nasif | Software Engineer",
   description: "Full-stack developer portfolio - React, Next.js, NestJS",
-  icons: {
-    icon: "/site_icon_nh.png",
-  },
 };
 
 export default function RootLayout({

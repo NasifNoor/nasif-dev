@@ -1,6 +1,18 @@
 import { cv } from "@/data/cv";
 import { detectIntent, detectPerspective } from "./intent";
 
+function getCurrentRole() {
+  for (const job of cv.professionalDetails) {
+    const position = job.positions.find((p) => p.current);
+
+    if (position) {
+      return `${position.title} at ${job.company} (${position.duration})`;
+    }
+  }
+
+  return null;
+}
+
 function buildContext(intent: string) {
   if (intent === "skills") {
     return `
@@ -28,7 +40,7 @@ function buildContext(intent: string) {
       Company: ${exp.company}
 
       Roles:
-      ${exp.positions.map((r) => `- ${r.title} (${r.duration})`).join("\n")}
+      ${exp.positions.map((r) => `- ${r.title} (${r.duration})${r.current ? " [CURRENT ROLE]" : ""}`).join("\n")}
 
       Responsibilities:
       ${exp.responsibilities.join("\n")}
@@ -49,6 +61,7 @@ function buildContext(intent: string) {
   return `
     Name: ${cv.personalInfo.name}
     Role: ${cv.personalInfo.role}
+    Currently: ${getCurrentRole() ?? "Not specified"}
     Address: ${cv.personalInfo.address}
     Linkedin: ${cv.personalInfo.linkedin}
     Github: ${cv.personalInfo.github}
