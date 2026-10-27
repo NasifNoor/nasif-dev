@@ -13,6 +13,7 @@ export type CV = {
   };
 
   about: {
+    importantNote: string;
     summary: string;
   };
 
@@ -52,7 +53,7 @@ export type CV = {
   }[];
 };
 
-export const cv = {
+export const cv: CV = {
   personalInfo: {
     name: "M. Nasif Hasan Noor",
     role: "Software Engineer",
