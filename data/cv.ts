@@ -91,7 +91,7 @@ export const cv = {
       positions: [
         {
           title: "Software Engineer",
-          duration: "April 2024 - March 2026",
+          duration: "April 2024 - August 2026",
         },
         {
           title: "Assistant Software Engineer",

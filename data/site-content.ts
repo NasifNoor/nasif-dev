@@ -284,7 +284,7 @@ export const experience: ExperienceGroup[] = [
     company: "Golden Harvest InfoTech Ltd.",
     positions: [
       {
-        period: "April 2024 - March 2026",
+        period: "April 2024 - August 2026",
         role: "Software Engineer",
         description:
           "Leading frontend architecture, performance optimization, and design systems for enterprise products.",
