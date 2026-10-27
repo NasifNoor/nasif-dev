@@ -6,9 +6,9 @@ export function TechStack() {
       <div className="mb-2 font-[var(--font-dm-mono)] text-[10px] uppercase tracking-[3px] text-blue-500">
         Technologies
       </div>
-      <div className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
+      <h2 className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
         Tech Stack
-      </div>
+      </h2>
 
       <div className="grid grid-cols-2 gap-[10px] sm:grid-cols-3 lg:grid-cols-6">
         {techStack.map((item) => (

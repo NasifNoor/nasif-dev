@@ -6,9 +6,9 @@ export function Education() {
       <div className="mb-2 font-[var(--font-dm-mono)] text-[10px] uppercase tracking-[3px] text-blue-500">
         Academic
       </div>
-      <div className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
+      <h2 className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
         Education
-      </div>
+      </h2>
 
       <div className="relative pl-7 before:absolute before:bottom-[6px] before:left-[6px] before:top-[6px] before:w-px before:bg-white/[0.06] before:content-['']">
         {education.map((item) => (

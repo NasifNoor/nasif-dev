@@ -40,9 +40,9 @@ export function Projects() {
       <div className="mb-2 font-[var(--font-dm-mono)] text-[10px] uppercase tracking-[3px] text-blue-500">
         Work
       </div>
-      <div className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
+      <h2 className="mb-8 text-[24px] font-semibold tracking-[-0.8px] text-slate-100">
         Featured Projects
-      </div>
+      </h2>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
@@ -57,9 +57,9 @@ export function Projects() {
               <div className="mb-2 font-[var(--font-dm-mono)] text-[9px] uppercase tracking-[1.5px] text-blue-500">
                 {project.highlight}
               </div>
-              <div className="mb-2 text-[13px] font-semibold tracking-[-0.2px] text-slate-100">
+              <h3 className="mb-2 text-[13px] font-semibold tracking-[-0.2px] text-slate-100">
                 {project.title}
-              </div>
+              </h3>
               <p className="mb-[14px] text-[11px] leading-[1.65] text-slate-600">
                 {project.description}
               </p>
