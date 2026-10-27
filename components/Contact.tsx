@@ -59,19 +59,37 @@ function validateForm(values: FormValues) {
   return errors;
 }
 
-function runRecaptcha(siteKey: string) {
+const RECAPTCHA_WAIT_INTERVAL_MS = 100;
+const RECAPTCHA_WAIT_TIMEOUT_MS = 10000;
+
+// The script is only injected once the visitor touches the form, so it may
+// still be in flight when they submit. Wait for it instead of failing outright.
+function waitForRecaptcha() {
+  return new Promise<boolean>((resolve) => {
+    if (window.grecaptcha) {
+      resolve(true);
+      return;
+    }
+
+    const startedAt = Date.now();
+    const timer = window.setInterval(() => {
+      if (window.grecaptcha) {
+        window.clearInterval(timer);
+        resolve(true);
+        return;
+      }
+
+      if (Date.now() - startedAt >= RECAPTCHA_WAIT_TIMEOUT_MS) {
+        window.clearInterval(timer);
+        resolve(false);
+      }
+    }, RECAPTCHA_WAIT_INTERVAL_MS);
+  });
+}
+
+function executeRecaptcha(siteKey: string) {
   return new Promise<string>((resolve, reject) => {
-    if (!siteKey) {
-      reject(new Error("reCAPTCHA is not configured."));
-      return;
-    }
-
-    if (!window.grecaptcha) {
-      reject(new Error("reCAPTCHA failed to load. Please try again."));
-      return;
-    }
-
-    window.grecaptcha.ready(async () => {
+    window.grecaptcha?.ready(async () => {
       try {
         const token = await window.grecaptcha?.execute(siteKey, {
           action: RECAPTCHA_ACTION,
@@ -90,6 +108,18 @@ function runRecaptcha(siteKey: string) {
   });
 }
 
+async function runRecaptcha(siteKey: string) {
+  if (!siteKey) {
+    throw new Error("reCAPTCHA is not configured.");
+  }
+
+  if (!(await waitForRecaptcha())) {
+    throw new Error("reCAPTCHA failed to load. Please try again.");
+  }
+
+  return executeRecaptcha(siteKey);
+}
+
 export function Contact() {
   const [formValues, setFormValues] = useState<FormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -98,9 +128,16 @@ export function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRecaptchaRequested, setIsRecaptchaRequested] = useState(false);
   const nameInputRef = useRef<HTMLInputElement | null>(null);
 
   const hasRecaptcha = useMemo(() => Boolean(RECAPTCHA_SITE_KEY), []);
+
+  // Hold the reCAPTCHA script back until someone actually engages with the
+  // form, so visitors who never submit don't pay for it on first load.
+  const handleFormFocus = useCallback(() => {
+    setIsRecaptchaRequested(true);
+  }, []);
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -145,6 +182,9 @@ export function Contact() {
       setErrors({});
       setIsSubmitting(true);
       setSubmitState({ type: "idle", message: "" });
+      // Safety net for a submit that never fired a focus event (autofill):
+      // inject the script now, and let runRecaptcha wait for it.
+      setIsRecaptchaRequested(true);
 
       try {
         const captchaToken = await runRecaptcha(RECAPTCHA_SITE_KEY);
@@ -209,7 +249,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="px-5 py-16 sm:px-10">
-      {hasRecaptcha ? (
+      {hasRecaptcha && isRecaptchaRequested ? (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
           strategy="afterInteractive"
@@ -249,7 +289,12 @@ export function Contact() {
           </div>
         </div>
 
-        <form className="flex flex-col gap-[10px]" onSubmit={handleSubmit} noValidate>
+        <form
+          className="flex flex-col gap-[10px]"
+          onSubmit={handleSubmit}
+          onFocus={handleFormFocus}
+          noValidate
+        >
           <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
             <div>
               <input
